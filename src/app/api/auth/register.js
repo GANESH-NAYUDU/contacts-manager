@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import db from '../../../lib/database';
 import moment from 'moment';
 
-export default async function handler(req, res) {
+export default async function POST(req, res) {
   const { name, email, password } = req.body;
 
   db.get('SELECT email FROM users WHERE email = ?', [email], async (err, row) => {
